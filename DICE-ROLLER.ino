@@ -30,15 +30,16 @@ void loop() {
 
   if (buttonState == HIGH) {
 
-    loopGenerator(160);
-    loopGenerator(140);
-    loopGenerator(120);
-    loopGenerator(100);
-    loopGenerator(80);
-    loopGenerator(60);
-    loopGenerator(40);
-    loopGenerator(20);
-
+    loopGenerator(180, NOTE_DS8);
+    loopGenerator(160, NOTE_DS8);
+    loopGenerator(140, NOTE_DS8);
+    loopGenerator(120, NOTE_DS8);
+    loopGenerator(100, NOTE_DS8);
+    loopGenerator(80, NOTE_DS8);
+    loopGenerator(60, NOTE_DS8);
+    loopGenerator(40, NOTE_DS8);
+    loopGenerator(20, NOTE_DS8);
+    
     digitalWrite(one, LOW);
     digitalWrite(two, LOW);
     digitalWrite(three, LOW);
@@ -95,35 +96,35 @@ void loop() {
 
 }
 
-void loopGenerator(int x) {
+void loopGenerator(int x, int sound) {
 
-   for (int n = 2; n > 0; n--) {
+   for (int n = 1; n > 0; n--) {
       digitalWrite(five, HIGH);
-      tone(speaker, NOTE_CS5);
+      tone(speaker, sound);
       delay(x);
       noTone(speaker);
       digitalWrite(five, LOW);
 
       digitalWrite(two, HIGH);
-      tone(speaker, NOTE_CS5);
+      tone(speaker, sound);
       delay(x);
       noTone(speaker);
       digitalWrite(two, LOW);
 
       digitalWrite(one, HIGH);
-      tone(speaker, NOTE_CS5);
+      tone(speaker, sound);
       delay(x);
       noTone(speaker);
       digitalWrite(one, LOW);
 
       digitalWrite(four, HIGH);
-      tone(speaker, NOTE_CS5);
+      tone(speaker, sound);
       delay(x);
       noTone(speaker);
       digitalWrite(four, LOW);
 
       digitalWrite(three, HIGH);
-      tone(speaker, NOTE_CS5);
+      tone(speaker, sound);
       delay(x);
       noTone(speaker);
       digitalWrite(three, LOW);
